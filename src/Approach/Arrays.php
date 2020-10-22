@@ -5,9 +5,16 @@ use Zero\DataHandling\Interfaces\DataInterface;
 
 class Arrays implements DataInterface {
 
-    public function map()
+    public $data;
+
+    public function __construct($data)
     {
-        return $this;
+        $this->data = $data;
+    }
+
+    public function column($key)
+    {
+        return ( empty(array_column($this->data,$key)) == true ? $this->data[$key] : array_column($this->data,$key));
     }
 
     public function cut()
@@ -17,6 +24,6 @@ class Arrays implements DataInterface {
 
     public function __toString()
     {
-        return "World.\n";
+        return json_encode($this->result);
     }
 }

@@ -2,59 +2,41 @@
 namespace Zero\DataHandling;
 
 use Zero\DataHandling\Approach\Arrays;
-use Zero\DataHandling\Approach\Json;
+use Zero\DataHandling\Approach\Objects;
 
 class DataHandling {
-    /**
-     * 數據資料
-     */
-    private $data;
-
-    /**
-     * 類型
-     */
-    private $type;
-
-    /**
-     * 最變成的格式
-     */
-    private $format;
-
-    public function __construct($array)
-    {
-       $this->array = $array;
-    }
 
     /**
      * 填入資料
      */
-    public static function fill($array) 
+    public static function fill() 
     {   
-        return new DataHandling($array);
+        return new DataHandling();
     }
 
     /**
      * 格式
      */
-    public function format($format)
+    public function format($data)
     {
-        $this->format = $format;
-        return $this->{gettype($this->array)}();
+        if (method_exists($this, gettype($data))) {
+            return $this->{gettype($data)}($data);
+        }
     }
 
     /**
      * 陣列處理
      */
-    public function array()
-    {
-        return new Arrays();
+    public function array($data)
+    {   
+        return new Arrays($data);
     }
 
     /**
      * JSON處理
      */
-    public function json()
+    public function object($data)
     {
-        return new Json();
+        return new Objects($data);
     }
 }
