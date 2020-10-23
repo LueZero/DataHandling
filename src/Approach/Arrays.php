@@ -1,11 +1,15 @@
 <?php
+
 namespace Zero\DataHandling\Approach;
 
-use Zero\DataHandling\Interfaces\DataInterface;
+use Zero\DataHandling\Approach\DataProcessing;
+use Zero\DataHandling\Interfaces\DataHandingInterface;
+use Zero\DataHandling\Helper\DataLogic;
 
-class Arrays implements DataInterface {
+class Arrays extends DataProcessing implements DataHandingInterface
+{
 
-    public $data;
+    use DataLogic;
 
     public function __construct($data)
     {
@@ -14,12 +18,11 @@ class Arrays implements DataInterface {
 
     public function column($key)
     {
-        return ( empty(array_column($this->data,$key)) == true ? $this->data[$key] : array_column($this->data,$key));
+        return DataLogic::search_column($this->data, $key);
     }
 
     public function cut()
     {
-      
     }
 
     public function __toString()

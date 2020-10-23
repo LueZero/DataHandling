@@ -1,11 +1,13 @@
 <?php
+
 namespace Zero\DataHandling\Approach;
 
-use Zero\DataHandling\Interfaces\DataInterface;
+use Zero\DataHandling\Approach\DataProcessing;
+use Zero\DataHandling\Interfaces\DataHandingInterface;
+use Zero\DataHandling\Helper\DataLogic;
 
-class Objects implements DataInterface {
-
-    public $data;
+class Objects extends DataProcessing implements DataHandingInterface
+{
 
     public function __construct($data)
     {
@@ -19,7 +21,6 @@ class Objects implements DataInterface {
 
     public function cut()
     {
-
     }
 
     public function __toString()

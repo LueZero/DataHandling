@@ -13,6 +13,6 @@ $array = [
 ];
 // $array = json_encode(["name" => [1, 2, 3]]);
 
-$result = DataHandling::fill()->format($array)->column("zero");
+$result = DataHandling::fill()->format($array,"array")->column("zero");
 print_r($array);
 print_r($result);

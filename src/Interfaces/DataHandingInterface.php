@@ -1,7 +1,9 @@
 <?php
+
 namespace Zero\DataHandling\Interfaces;
 
-interface DataInterface {
+interface DataHandingInterface
+{
     public function column($key);
     public function cut();
 }

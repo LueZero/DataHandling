@@ -1,42 +1,51 @@
-<?php 
+<?php
+
 namespace Zero\DataHandling;
 
 use Zero\DataHandling\Approach\Arrays;
 use Zero\DataHandling\Approach\Objects;
 
-class DataHandling {
+class DataHandling
+{       
+    private $format_data = [];
 
     /**
      * 填入資料
      */
-    public static function fill() 
-    {   
+    public static function fill()
+    {
         return new DataHandling();
     }
 
     /**
      * 格式
      */
-    public function format($data)
+    public function format($data,$format)
     {
-        if (method_exists($this, gettype($data))) {
-            return $this->{gettype($data)}($data);
-        }
+        return $this->{gettype($data)}();
     }
 
     /**
-     * 陣列處理
+     * 資料轉換
      */
-    public function array($data)
-    {   
-        return new Arrays($data);
+    public function transform($data)
+    {
+        $this->format_data = json_decode($data,true);
+    }
+
+    /**
+     * Array處理
+     */
+    public function array()
+    {
+        return new Arrays($this->format_data);
     }
 
     /**
      * JSON處理
      */
-    public function object($data)
+    public function object()
     {
-        return new Objects($data);
+        return new Objects($this->format_data);
     }
 }
