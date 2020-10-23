@@ -2,12 +2,22 @@
 
 namespace Zero\DataHandling;
 
+use Exception;
 use Zero\DataHandling\Approach\Arrays;
 use Zero\DataHandling\Approach\Objects;
 
 class DataHandling
-{       
-    private $format_data = [];
+{      
+    private $format_data;
+
+    private $type = [
+        "boolean", 
+        "string",
+        "integer",
+        "double", 
+        "NULL", 
+        "unknown type"
+    ];
 
     /**
      * 填入資料
@@ -18,26 +28,22 @@ class DataHandling
     }
 
     /**
-     * 格式
-     */
-    public function format($data,$format)
-    {
-        return $this->{gettype($data)}();
-    }
-
-    /**
      * 資料轉換
      */
     public function transform($data)
     {
-        $this->format_data = json_decode($data,true);
+        $this->format_data = $data;
+        if(in_array(gettype($data),$this->type)){
+            throw new Exception("資料類型不支持");
+        }
+        return $this->{gettype($data)}();
     }
 
     /**
      * Array處理
      */
     public function array()
-    {
+    {  
         return new Arrays($this->format_data);
     }
 

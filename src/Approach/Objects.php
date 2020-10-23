@@ -8,15 +8,11 @@ use Zero\DataHandling\Helper\DataLogic;
 
 class Objects extends DataProcessing implements DataHandingInterface
 {
-
-    public function __construct($data)
-    {
-        $this->data = $data;
-    }
+    use DataLogic;
 
     public function column($key)
     {
-        print_R($this->data);
+      
     }
 
     public function cut()

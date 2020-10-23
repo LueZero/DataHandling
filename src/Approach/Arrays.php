@@ -8,25 +8,20 @@ use Zero\DataHandling\Helper\DataLogic;
 
 class Arrays extends DataProcessing implements DataHandingInterface
 {
-
     use DataLogic;
 
-    public function __construct($data)
+    public function __construct($format_data)
     {
-        $this->data = $data;
+        $this->data = $format_data;
     }
 
     public function column($key)
     {
-        return DataLogic::search_column($this->data, $key);
+        return static::search_column($this->data,$key);
     }
 
     public function cut()
     {
-    }
-
-    public function __toString()
-    {
-        return json_encode($this->result);
+        
     }
 }
