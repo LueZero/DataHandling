@@ -10,14 +10,16 @@ class Objects implements DataHandingInterface
 {
     use DataLogic;
 
-    public function column($key)
+    public $input = [];
+    
+    public function __construct($formatData)
+    {
+        $this->input = $formatData;
+    }
+    
+    public function findKeyData($key)
     {
       
-    }
-
-    public function cut()
-    {
-        
     }
 
     public function __toString()

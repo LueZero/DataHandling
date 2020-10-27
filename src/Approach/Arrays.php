@@ -10,28 +10,15 @@ class Arrays implements DataHandingInterface
 {
     use DataLogic;
 
+    public $input = [];
+
     public function __construct($formatData)
     {
         $this->input = $formatData;
     }
 
-    public function column($keyName)
+    public function findKeyData($keyName)
     {
-        $result = [];
-        foreach ($this->input as $key => $value) {
-            $key."@".gettype($value)."\n";
-            if(gettype($value) == "array") {
-
-                
-
-            }
-        }
-        return [];
-    }
-
-    public function cut()
-    {
-
-
+        return static::loopArrayKeyData($this->input, $keyName);
     }
 }
