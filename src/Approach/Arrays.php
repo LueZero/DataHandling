@@ -6,22 +6,32 @@ use Zero\DataHandling\Approach\DataProcessing;
 use Zero\DataHandling\Interfaces\DataHandingInterface;
 use Zero\DataHandling\Helper\DataLogic;
 
-class Arrays extends DataProcessing implements DataHandingInterface
+class Arrays implements DataHandingInterface
 {
     use DataLogic;
 
-    public function __construct($format_data)
+    public function __construct($formatData)
     {
-        $this->data = $format_data;
+        $this->input = $formatData;
     }
 
-    public function column($key)
+    public function column($keyName)
     {
-        return static::search_column($this->data,$key);
+        $result = [];
+        foreach ($this->input as $key => $value) {
+            $key."@".gettype($value)."\n";
+            if(gettype($value) == "array") {
+
+                
+
+            }
+        }
+        return [];
     }
 
     public function cut()
     {
-        
+
+
     }
 }

@@ -8,7 +8,7 @@ use Zero\DataHandling\Approach\Objects;
 
 class DataHandling
 {      
-    private $format_data;
+    private $formatData;
 
     private $type = [
         "boolean", 
@@ -30,9 +30,9 @@ class DataHandling
     /**
      * 資料轉換
      */
-    public function transform($data)
+    public function transForm($data)
     {
-        $this->format_data = $data;
+        $this->formatData = $data;
         if(in_array(gettype($data),$this->type)){
             throw new Exception("資料類型不支持");
         }
@@ -44,7 +44,7 @@ class DataHandling
      */
     public function array()
     {  
-        return new Arrays($this->format_data);
+        return new Arrays($this->formatData);
     }
 
     /**
@@ -52,6 +52,6 @@ class DataHandling
      */
     public function object()
     {
-        return new Objects($this->format_data);
+        return new Objects($this->formatData);
     }
 }

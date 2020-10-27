@@ -6,7 +6,7 @@ use Zero\DataHandling\Approach\DataProcessing;
 use Zero\DataHandling\Interfaces\DataHandingInterface;
 use Zero\DataHandling\Helper\DataLogic;
 
-class Objects extends DataProcessing implements DataHandingInterface
+class Objects implements DataHandingInterface
 {
     use DataLogic;
 
@@ -17,6 +17,7 @@ class Objects extends DataProcessing implements DataHandingInterface
 
     public function cut()
     {
+        
     }
 
     public function __toString()
