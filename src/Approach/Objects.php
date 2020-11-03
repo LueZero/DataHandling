@@ -17,9 +17,9 @@ class Objects implements DataHandingInterface
         $this->input = $formatData;
     }
     
-    public function findKeyData($key)
+    public function findKeyData($keyName)
     {
-      
+        return static::loopObjectKeyData($this->input, $keyName);
     }
 
     public function __toString()

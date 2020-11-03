@@ -24,6 +24,30 @@ trait DataLogic
                 }
 
             }
+
+        }
+        return $result;
+    }
+
+    public static function loopObjectKeyData($object, string $keyName, &$result = [])
+    {
+        if (!empty((array)$object)) {
+
+            foreach ($object as $key => $value) {
+               
+                if ($key === $keyName) {
+
+                    $result[] = $value;
+                } else {
+
+                    if (gettype($value) == "array") {
+
+                        static::loopObjectKeyData($value, $keyName, $result);
+                    }
+                }
+               
+            }
+
         }
         return $result;
     }
