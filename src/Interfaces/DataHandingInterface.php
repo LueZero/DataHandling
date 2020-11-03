@@ -4,5 +4,6 @@ namespace Zero\DataHandling\Interfaces;
 
 interface DataHandingInterface
 {
-    public function findKeyData($key);
+    public function findKeyData($keyName);
+    public function twoDimensionalCompression($keyName);
 }

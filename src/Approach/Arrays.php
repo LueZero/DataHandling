@@ -21,4 +21,16 @@ class Arrays implements DataHandingInterface
     {
         return static::loopArrayKeyData($this->input, $keyName);
     }
+
+    public function twoDimensionalCompression($keyName)
+    {
+        $result = [];
+        foreach($this->input as $key=>$two){
+            foreach( $two as $k=>$v){
+                if($keyName == $k)
+                    $result[$k][] = $v;
+            }
+        }
+        return $result;
+    }
 }
