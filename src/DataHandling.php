@@ -7,10 +7,10 @@ use Zero\DataHandling\Approach\Arrays;
 use Zero\DataHandling\Approach\Objects;
 
 class DataHandling
-{      
-    private $formatData;
+{
+    protected $formatData;
 
-    private $type = [
+    protected $type = [
         "boolean", 
         "string",
         "integer",

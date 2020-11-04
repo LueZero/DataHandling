@@ -15,7 +15,10 @@ $array = (object)[
         "zero" => [1, "zero" => [222, 111]],
     ],
 ];
-// $result = DataHandling::fill()->transForm($array)->findKeyData("zero");
-// $result = DataHandling::fill()->transForm($array)->twoDimensionalCompression("zero");
-// $result = DataHandling::fill()->object()->randomData(["name", "phone", "email",],3);
+
+$result = DataHandling::fill()->transForm($array)->findKeyData("zero");
+$result = DataHandling::fill()->transForm($array)->twoDimensionalCompression("zero");
+$result = DataHandling::fill()->array()->randomData(["name", "phone", "email",],3);
+$result = DataHandling::fill()->object()->randomData(["name", "phone", "email",],3);
+
 print_r($result);

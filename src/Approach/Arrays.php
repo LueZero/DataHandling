@@ -11,6 +11,7 @@ class Arrays implements DataHandingInterface
     use DataLogic;
 
     public $input = [];
+    public $result = [];
 
     public function __construct($formatData)
     {
@@ -28,24 +29,23 @@ class Arrays implements DataHandingInterface
         foreach ($this->input as $key => $two) {
             foreach ($two as $k => $v) {
                 if ($keyName == $k)
-                    $result[$k][] = $v;
+                    $this->result[$k][] = $v;
             }
         }
-        return $result;
+        return $this->result;
     }
 
     public function randomData($format,$floor=null)
     {
-        $result = [];
         foreach ($format as $value) {
             if(!empty($floor)){
                 for ($i=0; $i < $floor; $i++) {
-                    $result[$i][$value] = rand(0, 99999);
+                    $this->result[$i][$value] = rand(0, 99999);
                 }
             }else{
-                $result[$value] = rand(0, 99999);
+                $this->result[$value] = rand(0, 99999);
             }
         }
-        return $result;
+        return $this->result;
     }
 }
