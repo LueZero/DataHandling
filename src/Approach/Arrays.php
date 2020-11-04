@@ -25,10 +25,25 @@ class Arrays implements DataHandingInterface
     public function twoDimensionalCompression($keyName)
     {
         $result = [];
-        foreach($this->input as $key=>$two){
-            foreach( $two as $k=>$v){
-                if($keyName == $k)
+        foreach ($this->input as $key => $two) {
+            foreach ($two as $k => $v) {
+                if ($keyName == $k)
                     $result[$k][] = $v;
+            }
+        }
+        return $result;
+    }
+
+    public function randomData($format,$floor=null)
+    {
+        $result = [];
+        foreach ($format as $value) {
+            if(!empty($floor)){
+                for ($i=0; $i < $floor; $i++) {
+                    $result[$i][$value] = rand(0, 99999);
+                }
+            }else{
+                $result[$value] = rand(0, 99999);
             }
         }
         return $result;

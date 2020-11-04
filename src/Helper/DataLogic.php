@@ -4,7 +4,7 @@ namespace Zero\DataHandling\Helper;
 
 trait DataLogic
 {   
-    public static function loopArrayKeyData(array $array,string $keyName,array &$result=[]) 
+    public static function loopArrayKeyData($array, $keyName, &$result=[]) 
     {
         if(!empty($array)){
            
@@ -29,15 +29,16 @@ trait DataLogic
         return $result;
     }
 
-    public static function loopObjectKeyData($object, string $keyName, &$result = [])
+    public static function loopObjectKeyData($object, $keyName, &$result = [])
     {
-        if (!empty((array)$object)) {
+        if (!empty($object)) {
 
             foreach ($object as $key => $value) {
                
                 if ($key === $keyName) {
 
                     $result[] = $value;
+                    
                 } else {
 
                     if (gettype($value) == "array") {
@@ -49,6 +50,6 @@ trait DataLogic
             }
 
         }
-        return $result;
+        return (object)$result;
     }
 }

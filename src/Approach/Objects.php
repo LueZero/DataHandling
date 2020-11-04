@@ -34,8 +34,18 @@ class Objects implements DataHandingInterface
         return $result;
     }
 
-    public function __toString()
+    public function randomData($format, $floor = null)
     {
-        return "World.\n";
+        $result = [];
+        foreach ($format as $value) {
+            if (!empty($floor)) {
+                for ($i = 0; $i < $floor; $i++) {
+                    $result[$i][$value] = rand(0, 99999);
+                }
+            } else {
+                $result[$value] = rand(0, 99999);
+            }
+        }
+        return (object)$result;
     }
 }

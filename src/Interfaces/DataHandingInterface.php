@@ -6,4 +6,5 @@ interface DataHandingInterface
 {
     public function findKeyData($keyName);
     public function twoDimensionalCompression($keyName);
+    public function randomData($format, $floor=null);
 }

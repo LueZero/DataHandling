@@ -7,15 +7,15 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Zero\DataHandling\DataHandling;
 
-$array = [
+$array = (object)[
     [
-        "1" => [1, "zero" => [222, 111]],
+        "zero" => [1, "zero" => [222, 111]],
     ],
     [
-        "2" => [1, "zero" => [222, 111]],
+        "zero" => [1, "zero" => [222, 111]],
     ],
 ];
 // $result = DataHandling::fill()->transForm($array)->findKeyData("zero");
 // $result = DataHandling::fill()->transForm($array)->twoDimensionalCompression("zero");
-
+// $result = DataHandling::fill()->object()->randomData(["name", "phone", "email",],3);
 print_r($result);
