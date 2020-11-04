@@ -23,9 +23,8 @@ class Arrays implements DataHandingInterface
         return static::loopArrayKeyData($this->input, $keyName);
     }
 
-    public function twoDimensionalCompression($keyName)
+    public function dimensionalCompression($keyName)
     {
-        $result = [];
         foreach ($this->input as $key => $two) {
             foreach ($two as $k => $v) {
                 if ($keyName == $k)
@@ -35,17 +34,15 @@ class Arrays implements DataHandingInterface
         return $this->result;
     }
 
-    public function randomData($format,$floor=null)
+    public function removeData($keyName)
     {
-        foreach ($format as $value) {
-            if(!empty($floor)){
-                for ($i=0; $i < $floor; $i++) {
-                    $this->result[$i][$value] = rand(0, 99999);
-                }
-            }else{
-                $this->result[$value] = rand(0, 99999);
-            }
-        }
-        return $this->result;
+    }
+
+    public function addData()
+    {
+    }
+
+    public function sortData()
+    {
     }
 }

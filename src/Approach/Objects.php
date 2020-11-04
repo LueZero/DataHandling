@@ -12,18 +12,18 @@ class Objects implements DataHandingInterface
 
     public $input = [];
     public $result = [];
-    
+
     public function __construct($formatData)
     {
         $this->input = $formatData;
     }
-    
+
     public function findKeyData($keyName)
     {
         return static::loopObjectKeyData($this->input, $keyName);
     }
 
-    public function twoDimensionalCompression($keyName)
+    public function dimensionalCompression($keyName)
     {
         foreach ($this->input as $key => $two) {
             foreach ($two as $k => $v) {
@@ -34,17 +34,15 @@ class Objects implements DataHandingInterface
         return $this->result;
     }
 
-    public function randomData($format, $floor = null)
+    public function removeData($keyName)
     {
-        foreach ($format as $value) {
-            if (!empty($floor)) {
-                for ($i = 0; $i < $floor; $i++) {
-                    $this->result[$i][$value] = rand(0, 99999);
-                }
-            } else {
-                $this->result[$value] = rand(0, 99999);
-            }
-        }
-        return (object)$this->result;
+    }
+
+    public function addData()
+    {
+    }
+
+    public function sortData()
+    {
     }
 }
