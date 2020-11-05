@@ -3,28 +3,24 @@
 namespace Zero\DataHandling\Helper;
 
 trait DataLogic
-{   
-    public static function loopArrayKeyData($array, $keyName, &$result=[]) 
+{
+    public static function loopArrayKeyData($array, $keyName, &$result = [])
     {
-        if(!empty($array)){
-           
+        if (!empty($array)) {
+
             foreach ($array as $key => $value) {
-                
-                if($key === $keyName){
+
+                if ($key === $keyName) {
 
                     $result[] = $value;
+                } else {
 
-                }else{
-                 
-                    if(gettype($value) == "array") {
-                     
-                        static::loopArrayKeyData($value,$keyName,$result);
-    
+                    if (gettype($value) == "array") {
+
+                        static::loopArrayKeyData($value, $keyName, $result);
                     }
                 }
-
             }
-
         }
         return $result;
     }
@@ -34,22 +30,19 @@ trait DataLogic
         if (!empty($object)) {
 
             foreach ($object as $key => $value) {
-               
+
                 if ($key === $keyName) {
 
                     $result[] = $value;
-                    
                 } else {
 
-                    if (gettype($value) == "array") {
+                    if (gettype((object)$value) == "object") {
 
                         static::loopObjectKeyData($value, $keyName, $result);
                     }
                 }
-               
             }
-
         }
-        return (object)$result;
+        return (object) $result;
     }
 }

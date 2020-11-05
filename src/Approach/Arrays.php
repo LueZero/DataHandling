@@ -11,7 +11,6 @@ class Arrays implements DataHandingInterface
     use DataLogic;
 
     public $input = [];
-    public $result = [];
 
     public function __construct($formatData)
     {
@@ -23,26 +22,13 @@ class Arrays implements DataHandingInterface
         return static::loopArrayKeyData($this->input, $keyName);
     }
 
-    public function dimensionalCompression($keyName)
+    public function findValueData($valueName)
     {
-        foreach ($this->input as $key => $two) {
-            foreach ($two as $k => $v) {
-                if ($keyName == $k)
-                    $this->result[$k][] = $v;
-            }
-        }
-        return $this->result;
-    }
-
-    public function removeData($keyName)
-    {
-    }
-
-    public function addData()
-    {
-    }
-
-    public function sortData()
-    {
+        $result = [];
+        array_walk_recursive($this->input, function ($value, $key) use ($valueName, &$result) {
+            if ($value == $valueName)
+                $result[] = $value;
+        });
+        return $result;
     }
 }

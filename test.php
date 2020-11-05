@@ -7,15 +7,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Zero\DataHandling\DataHandling;
 
-$array = [
+$array = (object)[
     [
-        "zero" => [1, "zero" => [222, 111]],
+        "zero" => "456"
     ],
     [
-        "zero" => [1, "zero" => [222, 111]],
+        "zero" => "zero",
     ]
 ];
 
 $result = DataHandling::fill()->transForm($array)->findKeyData("zero");
-$result = DataHandling::fill()->transForm($array)->dimensionalCompression("zero");
+$result2 = DataHandling::fill()->transForm($array)->findValueData("zero");
 print_r($result);
+print_r($result2);
