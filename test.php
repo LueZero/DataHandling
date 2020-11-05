@@ -12,7 +12,7 @@ $array = (object)[
         "zero" => "456"
     ],
     [
-        "zero" => "zero",
+        "zero" => "zero"
     ]
 ];
 
