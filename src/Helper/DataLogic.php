@@ -45,4 +45,26 @@ trait DataLogic
         }
         return (object) $result;
     }
+
+    public static function loopSequenceData($data, $sort = "asc")
+    {
+        foreach ($data as $key => &$value) {
+
+            if (gettype($value) == "array") {
+
+                usort($value, function ($a, $b) use ($sort) {
+                    if ($sort == "asc") {
+                        return $a >= $b;
+                    } else if ($sort == "desc") {
+                        return $a <= $b;
+                    } else {
+                        return $a >= $b;
+                    }
+                });
+         
+                static::loopSequenceData($value);
+            }
+        }
+        return $data;
+    }
 }

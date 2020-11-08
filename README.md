@@ -19,9 +19,9 @@ $array = (object)[
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->findKeyData("zero");
+$result = DataHandling::fill()->transForm($array)->findKeyData("zero");// 用key找物件
 
-用key找物件
+output:
 
 stdClass Object 
 (               
@@ -29,13 +29,45 @@ stdClass Object
     [1] => zero 
 )               
 
-$result2 = DataHandling::fill()->transForm($array)->findValueData("zero");
+$result = DataHandling::fill()->transForm($array)->findValueData("zero");// 用value找物件值
 
-用value找物件值
+output :
 
 stdClass Object 
 (               
     [0] => zero 
 )
+
+
+$array = [
+    [
+       "zero"=>"1","2","4"
+    ],
+    [
+       "zero"=>"1","2","4"
+    ]
+];
+
+$result = DataHandling::fill()->transForm($array)->sequenceData("desc");// 資料排序 asc/desc方式
+
+output:
+
+Array                       
+(                           
+    [0] => Array      
+      (             
+          [0] => 4  
+          [1] => 2  
+          [2] => 1  
+      )             
+                    
+    [1] => Array      
+      (             
+          [0] => 4  
+          [1] => 2  
+          [2] => 1  
+      )                          
+                            
+)                           
 ```
                 

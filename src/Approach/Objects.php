@@ -31,4 +31,9 @@ class Objects implements DataHandingInterface
         });
         return (object) $result;
     }
+
+    public function sequenceData($sort)
+    {
+        return (object) static::loopSequenceData($this->input, strtolower($sort));
+    }
 }

@@ -31,4 +31,9 @@ class Arrays implements DataHandingInterface
         });
         return $result;
     }
+
+    public function sequenceData($sort)
+    {
+        return static::loopSequenceData($this->input, strtolower($sort));
+    }
 }
