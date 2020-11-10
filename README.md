@@ -19,7 +19,7 @@ $array = (object)[
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->findKeyData("zero");// 用key找物件
+$result = DataHandling::fill()->transForm($array)->findKeyData("zero");// 用key找陣列/物件資料
 
 output:
 
@@ -29,7 +29,7 @@ stdClass Object
     [1] => zero 
 )               
 
-$result = DataHandling::fill()->transForm($array)->findValueData("zero");// 用value找物件值
+$result = DataHandling::fill()->transForm($array)->findValueData("zero");// 用value找陣列/物件資料值
 
 output :
 

@@ -10,7 +10,7 @@ trait DataLogic
 
             foreach ($array as $key => $value) {
 
-                if ($key === $keyName) {
+                if ((string) $key === (string) $keyName) {
 
                     $result[] = $value;
                 } else {
@@ -31,13 +31,12 @@ trait DataLogic
 
             foreach ($object as $key => $value) {
 
-                if ($key === $keyName) {
+                if ((string) $key === (string) $keyName) {
 
                     $result[] = $value;
                 } else {
 
-                    if (gettype((object)$value) == "object") {
-
+                    if (gettype($value) == "array") {
                         static::loopObjectKeyData($value, $keyName, $result);
                     }
                 }
@@ -46,25 +45,32 @@ trait DataLogic
         return (object) $result;
     }
 
-    public static function loopSequenceData($data, $sort = "asc")
-    {
-        foreach ($data as $key => &$value) {
-
-            if (gettype($value) == "array") {
-
-                usort($value, function ($a, $b) use ($sort) {
-                    if ($sort == "asc") {
-                        return $a >= $b;
-                    } else if ($sort == "desc") {
-                        return $a <= $b;
-                    } else {
-                        return $a >= $b;
-                    }
-                });
-         
-                static::loopSequenceData($value);
+    public static function loopSequenceData(&$data, $sort = "")
+    {   
+        $data = (array) $data;
+        if (static::isAssoc($data)) {
+            if ($sort == "asc") {
+                sort($data);
+            } else if ($sort == "desc") {
+                arsort($data);
+            }
+        } else {
+            if ($sort == "asc") {
+                sort($data);
+            } else if ($sort == "desc") {
+                arsort($data);
+            }
+        }
+        foreach ($data as &$a) {
+            if (is_array($a)) {
+                static::loopSequenceData($a, $sort);
             }
         }
         return $data;
+    }
+
+    public static function isAssoc($arr)
+    {   
+        return array_keys($arr) !== range(0, count($arr) - 1);
     }
 }

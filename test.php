@@ -7,19 +7,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Zero\DataHandling\DataHandling;
 
-$array = [
-    [
-       "zero"=>"1","2","4"
-    ],
-    [
-       "zero"=>"1","2","4"
-    ]
+$array = (object) [
+   [
+      "zero" => [ "1", "2", "4" ]
+   ],
+   [
+      "zero" => [ "2", "1", "3" ]
+   ]
 ];
 
 $result = DataHandling::fill()->transForm($array)->findKeyData("zero");
 
 $result = DataHandling::fill()->transForm($array)->findValueData("zero");
 
-$result = DataHandling::fill()->transForm($array)->sequenceData("desc");
+$result = DataHandling::fill()->transForm($array)->sequenceData("asc");
 
 print_r($result);
