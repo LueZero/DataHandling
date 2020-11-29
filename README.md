@@ -10,6 +10,8 @@ use Zero\DataHandling\DataHandling;
 ## 使用方法
 
 ```
+input: 
+
 $array = (object)[
     [
         "zero" => "456"
@@ -21,7 +23,7 @@ $array = (object)[
 
 $result = DataHandling::fill()->transForm($array)->findKeyData("zero");// 用key找陣列/物件資料
 
-output:
+output: 
 
 stdClass Object 
 (               
@@ -37,7 +39,9 @@ stdClass Object
 (               
     [0] => zero 
 )
-
+```
+```
+input: 
 
 $array = [
     [
