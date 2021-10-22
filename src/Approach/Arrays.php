@@ -10,7 +10,7 @@ class Arrays implements DataHandingInterface
 {
     use DataLogic;
 
-    public $input = [];
+    private $input = [];
 
     public function __construct($formatData)
     {
