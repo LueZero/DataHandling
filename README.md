@@ -14,14 +14,14 @@ input:
 
 $array = (object)[
     [
-        "zero" => "456"
+        'zero' => '456'
     ],
     [
-        "zero" => "zero"
+        'zero' => 'zero'
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->findKeyData("zero");// 用key找陣列/物件資料
+$result = DataHandling::fill()->transForm($array)->findKeyData('zero');// 用key找陣列/物件資料
 
 output: 
 
@@ -31,7 +31,7 @@ stdClass Object
     [1] => zero 
 )               
 
-$result = DataHandling::fill()->transForm($array)->findValueData("zero");// 用value找陣列/物件資料值
+$result = DataHandling::fill()->transForm($array)->findValueData('zero');// 用value找陣列/物件資料值
 
 output :
 
@@ -45,14 +45,14 @@ input:
 
 $array = [
     [
-       "zero"=>"1","2","4"
+       'zero'=>'1','2','4'
     ],
     [
-       "zero"=>"1","2","4"
+       'zero'=>'1','2','4'
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->sequenceData("desc");// 資料排序 asc/desc方式
+$result = DataHandling::fill()->transForm($array)->sequenceData('desc');// 資料排序 asc/desc方式
 
 output:
 
