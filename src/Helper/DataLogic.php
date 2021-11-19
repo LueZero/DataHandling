@@ -15,7 +15,7 @@ trait DataLogic
                     $result[] = $value;
                 } else {
 
-                    if (gettype($value) == "array") {
+                    if (gettype($value) == 'array') {
 
                         static::loopArrayKeyData($value, $keyName, $result);
                     }
@@ -36,7 +36,7 @@ trait DataLogic
                     $result[] = $value;
                 } else {
 
-                    if (gettype($value) == "array") {
+                    if (gettype($value) == 'array') {
                         static::loopObjectKeyData($value, $keyName, $result);
                     }
                 }
@@ -45,19 +45,19 @@ trait DataLogic
         return (object) $result;
     }
 
-    public static function loopSequenceData(&$data, $sort = "")
+    public static function loopSequenceData(&$data, $sort = '')
     {   
         $data = (array) $data;
         if (static::isAssoc($data)) {
-            if ($sort == "asc") {
+            if ($sort == 'asc') {
                 sort($data);
-            } else if ($sort == "desc") {
+            } else if ($sort == 'desc') {
                 arsort($data);
             }
         } else {
-            if ($sort == "asc") {
+            if ($sort == 'asc') {
                 sort($data);
-            } else if ($sort == "desc") {
+            } else if ($sort == 'desc') {
                 arsort($data);
             }
         }

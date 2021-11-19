@@ -11,12 +11,12 @@ class DataHandling
     protected $formatData;
 
     protected $type = [
-        "boolean", 
-        "string",
-        "integer",
-        "double", 
-        "NULL", 
-        "unknown type"
+        'boolean', 
+        'string',
+        'integer',
+        'double', 
+        'NULL', 
+        'unknown type'
     ];
 
     /**
@@ -34,7 +34,7 @@ class DataHandling
     {
         $this->formatData = $data;
         if(in_array(gettype($data),$this->type)){
-            throw new Exception("資料類型不支持");
+            throw new Exception('資料類型不支持');
         }
         return $this->{gettype($data)}();
     }
