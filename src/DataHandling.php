@@ -5,6 +5,7 @@ namespace Zero\DataHandling;
 use Exception;
 use Zero\DataHandling\Approach\Arrays;
 use Zero\DataHandling\Approach\Objects;
+use Zero\DataHandling\Approach\DataHandingInterface;
 
 class DataHandling
 {
@@ -30,7 +31,7 @@ class DataHandling
     /**
      * 資料轉換
      */
-    public function transForm($data)
+    public function transForm($data): DataHandingInterface
     {
         $this->formatData = $data;
         if(in_array(gettype($data),$this->type)){
