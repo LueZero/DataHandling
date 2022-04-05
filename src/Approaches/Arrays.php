@@ -1,12 +1,12 @@
 <?php
 
-namespace Zero\DataHandling\Approach;
+namespace Zero\DataHandling\Approaches;
 
-use Zero\DataHandling\Approach\DataProcessing;
-use Zero\DataHandling\Approach\DataHandingInterface;
-use Zero\DataHandling\Helper\DataLogic;
+use Zero\DataHandling\Approaches\DataProcessing;
+use Zero\DataHandling\Approaches\DataHandingInterface;
+use Zero\DataHandling\Helpers\DataLogic;
 
-class Objects implements DataHandingInterface
+class Arrays implements DataHandingInterface
 {
     use DataLogic;
 
@@ -19,7 +19,7 @@ class Objects implements DataHandingInterface
 
     public function findKeyData($keyName)
     {
-        return static::loopObjectKeyData($this->input, $keyName);
+        return static::loopArrayKeyData($this->input, $keyName);
     }
 
     public function findValueData($valueName)
@@ -29,11 +29,11 @@ class Objects implements DataHandingInterface
             if ($value == $valueName)
                 $result[] = $value;
         });
-        return (object) $result;
+        return $result;
     }
 
     public function sequenceData($sort)
     {
-        return (object) static::loopSequenceData($this->input, strtolower($sort));
+        return static::loopSequenceData($this->input, strtolower($sort));
     }
 }

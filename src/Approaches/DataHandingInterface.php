@@ -1,6 +1,6 @@
 <?php
 
-namespace Zero\DataHandling\Approach;
+namespace Zero\DataHandling\Approaches;
 
 interface DataHandingInterface
 {

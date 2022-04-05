@@ -1,6 +1,6 @@
 <?php
 
-namespace Zero\DataHandling\Helper;
+namespace Zero\DataHandling\Helpers;
 
 trait DataLogic
 {

@@ -3,9 +3,9 @@
 namespace Zero\DataHandling;
 
 use Exception;
-use Zero\DataHandling\Approach\Arrays;
-use Zero\DataHandling\Approach\Objects;
-use Zero\DataHandling\Approach\DataHandingInterface;
+use Zero\DataHandling\Approaches\Arrays;
+use Zero\DataHandling\Approaches\Objects;
+use Zero\DataHandling\Approaches\DataHandingInterface;
 
 class DataHandling
 {
