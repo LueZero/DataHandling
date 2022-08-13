@@ -13,6 +13,7 @@ trait DataLogic
                 if ((string) $key === (string) $keyName) {
 
                     $result[] = $value;
+                    
                 } else {
 
                     if (gettype($value) == 'array') {
@@ -22,6 +23,7 @@ trait DataLogic
                 }
             }
         }
+
         return $result;
     }
 
@@ -42,12 +44,14 @@ trait DataLogic
                 }
             }
         }
+
         return (object) $result;
     }
 
     public static function loopSequenceData(&$data, $sort = '')
     {   
         $data = (array) $data;
+
         if (static::isAssoc($data)) {
             if ($sort == 'asc') {
                 sort($data);
@@ -61,11 +65,12 @@ trait DataLogic
                 arsort($data);
             }
         }
+        
         foreach ($data as &$a) {
-            if (is_array($a)) {
+            if (is_array($a))
                 static::loopSequenceData($a, $sort);
-            }
         }
+
         return $data;
     }
 

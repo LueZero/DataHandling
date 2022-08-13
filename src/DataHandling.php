@@ -9,14 +9,14 @@ use Zero\DataHandling\Approaches\DataHandingInterface;
 
 class DataHandling
 {
-    protected $formatData;
+    protected $inputs;
 
-    protected $type = [
-        'boolean', 
+    protected $banTypes = [
+        'boolean',
         'string',
         'integer',
-        'double', 
-        'NULL', 
+        'double',
+        'NULL',
         'unknown type'
     ];
 
@@ -33,19 +33,21 @@ class DataHandling
      */
     public function transForm($data): DataHandingInterface
     {
-        $this->formatData = $data;
-        if(in_array(gettype($data),$this->type)){
-            throw new Exception('資料類型不支持');
+        $this->inputs = $data;
+
+        if (in_array(gettype($data), $this->banTypes)) {
+            throw new Exception('資料類型不支持 ' . gettype($data));
         }
-        return $this->{gettype($data)}();
+
+        return $this->{gettype($this->inputs)}();
     }
 
     /**
      * Array處理
      */
     public function array()
-    {  
-        return new Arrays($this->formatData);
+    {
+        return new Arrays($this->inputs);
     }
 
     /**
@@ -53,6 +55,6 @@ class DataHandling
      */
     public function object()
     {
-        return new Objects($this->formatData);
+        return new Objects($this->inputs);
     }
 }

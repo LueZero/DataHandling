@@ -10,22 +10,22 @@ class Objects implements DataHandingInterface
 {
     use DataLogic;
 
-    private $input = [];
+    private $inputs = [];
 
     public function __construct($formatData)
     {
-        $this->input = $formatData;
+        $this->inputs = $formatData;
     }
 
     public function findKeyData($keyName)
     {
-        return static::loopObjectKeyData($this->input, $keyName);
+        return static::loopObjectKeyData($this->inputs, $keyName);
     }
 
     public function findValueData($valueName)
     {
         $result = [];
-        array_walk_recursive($this->input, function ($value, $key) use ($valueName, &$result) {
+        array_walk_recursive($this->inputs, function ($value, $key) use ($valueName, &$result) {
             if ($value == $valueName)
                 $result[] = $value;
         });
@@ -34,6 +34,6 @@ class Objects implements DataHandingInterface
 
     public function sequenceData($sort)
     {
-        return (object) static::loopSequenceData($this->input, strtolower($sort));
+        return (object) static::loopSequenceData($this->inputs, strtolower($sort));
     }
 }
