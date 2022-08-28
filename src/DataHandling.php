@@ -5,7 +5,7 @@ namespace Zero\DataHandling;
 use Exception;
 use Zero\DataHandling\Approaches\Arrays;
 use Zero\DataHandling\Approaches\Objects;
-use Zero\DataHandling\Approaches\DataHandingInterface;
+use Zero\DataHandling\Approaches\DataProcessingInterface;
 
 class DataHandling
 {
@@ -31,7 +31,7 @@ class DataHandling
     /**
      * 資料轉換
      */
-    public function transForm($data): DataHandingInterface
+    public function transForm($data): DataProcessingInterface
     {
         $this->inputs = $data;
 

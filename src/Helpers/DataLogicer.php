@@ -2,7 +2,7 @@
 
 namespace Zero\DataHandling\Helpers;
 
-trait DataLogic
+trait DataLogicer
 {
     public static function loopArrayKeyData($array, $keyName, &$result = [])
     {

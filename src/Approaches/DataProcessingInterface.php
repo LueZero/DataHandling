@@ -2,7 +2,7 @@
 
 namespace Zero\DataHandling\Approaches;
 
-interface DataHandingInterface
+interface DataProcessingInterface
 {
     public function findKeyData($keyName);
     public function findValueData($valueName);

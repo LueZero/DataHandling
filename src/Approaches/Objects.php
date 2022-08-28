@@ -3,12 +3,12 @@
 namespace Zero\DataHandling\Approaches;
 
 use Zero\DataHandling\Approaches\DataProcessing;
-use Zero\DataHandling\Approaches\DataHandingInterface;
-use Zero\DataHandling\Helpers\DataLogic;
+use Zero\DataHandling\Approaches\DataProcessingInterface;
+use Zero\DataHandling\Helpers\DataLogicer;
 
-class Objects implements DataHandingInterface
+class Objects implements DataProcessingInterface
 {
-    use DataLogic;
+    use DataLogicer;
 
     private $inputs = [];
 
