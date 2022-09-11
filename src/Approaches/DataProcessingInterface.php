@@ -6,5 +6,5 @@ interface DataProcessingInterface
 {
     public function findKeyData($keyName);
     public function findValueData($valueName);
-    public function sequenceData($sort);
+    public function sortData($sort);
 }

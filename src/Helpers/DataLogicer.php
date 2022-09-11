@@ -48,7 +48,7 @@ trait DataLogicer
         return (object) $result;
     }
 
-    public static function loopSequenceData(&$data, $sort = '')
+    public static function sortLoopData(&$data, $sort = '')
     {   
         $data = (array) $data;
 
@@ -68,7 +68,7 @@ trait DataLogicer
         
         foreach ($data as &$a) {
             if (is_array($a))
-                static::loopSequenceData($a, $sort);
+                static::sortLoopData($a, $sort);
         }
 
         return $data;

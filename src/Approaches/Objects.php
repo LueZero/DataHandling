@@ -32,8 +32,8 @@ class Objects implements DataProcessingInterface
         return (object) $result;
     }
 
-    public function sequenceData($sort)
+    public function sortData($sort)
     {
-        return (object) static::loopSequenceData($this->inputs, strtolower($sort));
+        return (object) static::sortLoopData($this->inputs, strtolower($sort));
     }
 }

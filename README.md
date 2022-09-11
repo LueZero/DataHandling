@@ -52,7 +52,7 @@ $array = [
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->sequenceData('desc');// 資料排序 asc/desc方式
+$result = DataHandling::fill()->transForm($array)->sortData('desc');// 資料排序 asc/desc方式
 
 output:
 

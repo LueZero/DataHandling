@@ -20,6 +20,6 @@ $result = DataHandling::fill()->transForm($array)->findKeyData('zero');
 
 $result = DataHandling::fill()->transForm($array)->findValueData('zero');
 
-$result = DataHandling::fill()->transForm($array)->sequenceData('asc');
+$result = DataHandling::fill()->transForm($array)->sortData('asc');
 
 print_r($result);

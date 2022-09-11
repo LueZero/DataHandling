@@ -34,8 +34,8 @@ class Arrays implements DataProcessingInterface
         return $result;
     }
 
-    public function sequenceData($sort)
+    public function sortData($sort)
     {
-        return static::loopSequenceData($this->inputs, strtolower($sort));
+        return static::loopSortData($this->inputs, strtolower($sort));
     }
 }
