@@ -1,14 +1,14 @@
 <?php
 
-namespace Zero\DataHandling\Approaches;
+namespace Zero\Handling\Approaches;
 
-use Zero\DataHandling\Approaches\DataProcessing;
-use Zero\DataHandling\Approaches\DataProcessingInterface;
-use Zero\DataHandling\Helpers\DataLogicer;
+use Zero\Handling\HandlingInterface;
+use Zero\Handling\Approaches\DataProcessing;
+use Zero\Handling\Traits\DataProcessor;
 
-class Objects implements DataProcessingInterface
+class Objects implements HandlingInterface
 {
-    use DataLogicer;
+    use DataProcessor;
 
     private $inputs = [];
 

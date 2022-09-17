@@ -1,10 +1,10 @@
-# PHP 資料處理 datahandling
+# PHP 資料處理
 
 ## 引入
 ```
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Zero\DataHandling\DataHandling;
+use Zero\Handling\DataProcessing;
 ```
 
 ## 使用方法
@@ -21,7 +21,7 @@ $array = (object)[
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->findKeyData('zero');// 用key找陣列/物件資料
+$result = DataProcessing::get()->transForm($array)->findKeyData('zero');// 用key找陣列/物件資料
 
 output: 
 
@@ -31,7 +31,7 @@ stdClass Object
     [1] => zero 
 )               
 
-$result = DataHandling::fill()->transForm($array)->findValueData('zero');// 用value找陣列/物件資料值
+$result = DataProcessing::get()->transForm($array)->findValueData('zero');// 用value找陣列/物件資料值
 
 output :
 
@@ -52,7 +52,7 @@ $array = [
     ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->sortData('desc');// 資料排序 asc/desc方式
+$result = DataProcessing::get()->transForm($array)->sortData('desc');// 資料排序 asc/desc方式
 
 output:
 

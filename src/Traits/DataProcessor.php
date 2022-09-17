@@ -1,8 +1,8 @@
 <?php
 
-namespace Zero\DataHandling\Helpers;
+namespace Zero\Handling\Traits;
 
-trait DataLogicer
+trait DataProcessor
 {
     public static function loopArrayKeyData($array, $keyName, &$result = [])
     {

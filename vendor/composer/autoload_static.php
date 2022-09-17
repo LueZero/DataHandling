@@ -9,15 +9,19 @@ class ComposerStaticInit3abb224bd639ba476fe7dbba82d6bcf9
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
-            'Zero\\DataHandling\\' => 18,
+            'Zero\\Handling\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Zero\\DataHandling\\' => 
+        'Zero\\Handling\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -25,6 +29,7 @@ class ComposerStaticInit3abb224bd639ba476fe7dbba82d6bcf9
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3abb224bd639ba476fe7dbba82d6bcf9::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3abb224bd639ba476fe7dbba82d6bcf9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3abb224bd639ba476fe7dbba82d6bcf9::$classMap;
 
         }, null, ClassLoader::class);
     }

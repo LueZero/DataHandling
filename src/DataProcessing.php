@@ -1,13 +1,12 @@
 <?php
 
-namespace Zero\DataHandling;
+namespace Zero\Handling;
 
-use Exception;
-use Zero\DataHandling\Approaches\Arrays;
-use Zero\DataHandling\Approaches\Objects;
-use Zero\DataHandling\Approaches\DataProcessingInterface;
+use Zero\Handling\HandlingInterface;
+use Zero\Handling\Approaches\Arrays;
+use Zero\Handling\Approaches\Objects;
 
-class DataHandling
+class DataProcessing
 {
     protected $inputs;
 
@@ -21,22 +20,24 @@ class DataHandling
     ];
 
     /**
-     * 填入資料
+     * 取得
+     * @return \Zero\Handling\HandlingInterface
      */
-    public static function fill()
+    public static function Get()
     {
-        return new DataHandling();
+        return new DataProcessing();
     }
 
     /**
      * 資料轉換
+     * @return \Zero\Handling\Approaches\HandlingInterface
      */
-    public function transForm($data): DataProcessingInterface
+    public function transForm($data)
     {
         $this->inputs = $data;
 
         if (in_array(gettype($data), $this->banTypes)) {
-            throw new Exception('資料類型不支持 ' . gettype($data));
+            throw new \Exception('資料類型不支持 ' . gettype($data));
         }
 
         return $this->{gettype($this->inputs)}();

@@ -1,14 +1,14 @@
 <?php
 
-namespace Zero\DataHandling\Approaches;
+namespace Zero\Handling\Approaches;
 
-use Zero\DataHandling\Approaches\DataProcessing;
-use Zero\DataHandling\Approaches\DataProcessingInterface;
-use Zero\DataHandling\Helpers\DataLogicer;
+use Zero\Handling\HandlingInterface;
+use Zero\Handling\Approaches\DataProcessing;
+use Zero\Handling\Traits\DataProcessor;
 
-class Arrays implements DataProcessingInterface
+class Arrays implements HandlingInterface
 {
-    use DataLogicer;
+    use DataProcessor;
 
     private $inputs = [];
 
@@ -36,6 +36,6 @@ class Arrays implements DataProcessingInterface
 
     public function sortData($sort)
     {
-        return static::loopSortData($this->inputs, strtolower($sort));
+        return static::sortLoopData($this->inputs, strtolower($sort));
     }
 }

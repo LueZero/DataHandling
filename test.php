@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Zero\DataHandling\DataHandling;
+use Zero\Handling\DataProcessing;
 
 $array = (object) [
    [
@@ -16,10 +16,10 @@ $array = (object) [
    ]
 ];
 
-$result = DataHandling::fill()->transForm($array)->findKeyData('zero');
+$result = DataProcessing::get()->transForm($array)->findKeyData('zero');
 
-$result = DataHandling::fill()->transForm($array)->findValueData('zero');
+$result = DataProcessing::get()->transForm($array)->findValueData('zero');
 
-$result = DataHandling::fill()->transForm($array)->sortData('asc');
+$result = DataProcessing::get()->transForm($array)->sortData('asc');
 
 print_r($result);
