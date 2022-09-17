@@ -1,10 +1,10 @@
 <?php
 
-namespace Zero\Handling;
+namespace Zero;
 
-use Zero\Handling\HandlingInterface;
-use Zero\Handling\Approaches\Arrays;
-use Zero\Handling\Approaches\Objects;
+use Zero\Approaches\ApproachesInterface;
+use Zero\Approaches\Arrays;
+use Zero\Approaches\Objects;
 
 class DataProcessing
 {
@@ -21,7 +21,7 @@ class DataProcessing
 
     /**
      * 取得
-     * @return \Zero\Handling\HandlingInterface
+     * @return \Zero\Approaches\ApproachesInterface
      */
     public static function Get()
     {
@@ -30,7 +30,7 @@ class DataProcessing
 
     /**
      * 資料轉換
-     * @return \Zero\Handling\Approaches\HandlingInterface
+     * @return \Zero\Approaches\ApproachesInterface
      */
     public function transForm($data)
     {

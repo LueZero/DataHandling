@@ -1,6 +1,6 @@
 <?php
 
-namespace Zero\Handling\Traits;
+namespace Zero\Traits;
 
 trait DataProcessor
 {

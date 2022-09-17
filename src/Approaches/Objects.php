@@ -1,12 +1,11 @@
 <?php
 
-namespace Zero\Handling\Approaches;
+namespace Zero\Approaches;
 
-use Zero\Handling\HandlingInterface;
-use Zero\Handling\Approaches\DataProcessing;
-use Zero\Handling\Traits\DataProcessor;
+use Zero\Approaches\ApproachesInterface;
+use Zero\Traits\DataProcessor;
 
-class Objects implements HandlingInterface
+class Objects implements ApproachesInterface
 {
     use DataProcessor;
 

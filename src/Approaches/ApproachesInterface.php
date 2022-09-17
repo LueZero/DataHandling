@@ -1,8 +1,8 @@
 <?php
 
-namespace Zero\Handling;
+namespace Zero\Approaches;
 
-interface HandlingInterface
+interface ApproachesInterface
 {
     public function findKeyData($keyName);
     public function findValueData($valueName);

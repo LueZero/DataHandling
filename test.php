@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Zero\Handling\DataProcessing;
+use Zero\DataProcessing;
 
 $array = (object) [
    [

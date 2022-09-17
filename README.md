@@ -4,7 +4,7 @@
 ```
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Zero\Handling\DataProcessing;
+use Zero\DataProcessing;
 ```
 
 ## 使用方法
