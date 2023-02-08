@@ -9,9 +9,8 @@ use Zero\DataProcessing;
 
 ## 使用方法
 
-```
-input: 
-
+```php
+// input: 
 $array = (object)[
     [
         'zero' => '456'
@@ -21,28 +20,26 @@ $array = (object)[
     ]
 ];
 
-$result = DataProcessing::get()->transForm($array)->findKeyData('zero');// 用key找陣列/物件資料
+$result = DataProcessing::get()->transForm($array)->findKeyData('zero'); // 用 key 找陣列 / 物件資料
 
-output: 
-
+// output: 
 stdClass Object 
 (               
     [0] => 456  
     [1] => zero 
 )               
 
-$result = DataProcessing::get()->transForm($array)->findValueData('zero');// 用value找陣列/物件資料值
+$result = DataProcessing::get()->transForm($array)->findValueData('zero'); // 用 value 找陣列 / 物件資料值
 
-output :
-
+// output :
 stdClass Object 
 (               
     [0] => zero 
 )
 ```
-```
-input: 
 
+```php
+// input: 
 $array = [
     [
        'zero'=>'1','2','4'
@@ -52,10 +49,9 @@ $array = [
     ]
 ];
 
-$result = DataProcessing::get()->transForm($array)->sortData('desc');// 資料排序 asc/desc方式
+$result = DataProcessing::get()->transForm($array)->sortData('desc'); // 資料排序 asc / desc 方式
 
-output:
-
+// output:
 Array                       
 (                           
     [0] => Array      
