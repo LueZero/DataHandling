@@ -23,7 +23,7 @@ class DataProcessing
      * 取得
      * @return \Zero\Approaches\ApproachesInterface
      */
-    public static function Get()
+    public static function get()
     {
         return new DataProcessing();
     }
